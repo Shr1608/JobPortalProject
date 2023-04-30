@@ -1,0 +1,5 @@
+package com.project1.jobportal.repository;
+
+public interface postRepository {
+
+}

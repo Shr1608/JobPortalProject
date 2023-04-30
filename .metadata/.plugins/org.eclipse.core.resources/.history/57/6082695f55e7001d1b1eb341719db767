@@ -1,0 +1,25 @@
+package com.project1.jobportal.repository;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.bson.Document;
+
+import com.project1.jobportal.model.Post;
+
+public class SearchRepositoryImp implements SearchRepository{
+
+	@Override
+	public List<Post> findByText(String text) {
+		List<Post> result = new ArrayList<>();
+		result = Arrays.asList(new Document("$search", 
+			    new Document("text", 
+			    new Document("query", "java")
+			                .append("path", Arrays.asList("desc", "profile", "techs")))), 
+			    new Document("$sort", 
+			    new Document("exp", 1L)));
+		return null;
+	}
+		
+}

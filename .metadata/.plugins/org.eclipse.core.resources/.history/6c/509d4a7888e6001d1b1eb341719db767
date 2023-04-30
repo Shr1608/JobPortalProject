@@ -1,0 +1,13 @@
+package com.project1.jobportal.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Postcontroller {
+
+	@ApiIgnore
+    @RequestMapping(value="/")
+    public void redirect(HttpServletResponse response) throws IOException {
+        response.sendRedirect("/swagger-ui.html");
+    }
+}
